@@ -77,8 +77,7 @@
     <div class="field-items">
           <div class="field-item">
             <p>
-              <a href="/login">ENTRAR</a> ou
-              <a href="/register">REGISTRAR</a>
+              <a href="/logout">SAIR</a>
             </p>
           </div>
       </div>
@@ -145,6 +144,22 @@
                               <div class="grid-container dropdown sb-menu-level2 no-padding-small no-margin no-padding-medium">
                       </div>
                           </li>
+                          {% if current_user.is_authenticated %}
+                            <li class="cell small-12 large-auto menu-item ">
+                                              <div class="menu-item-holder">
+                                
+                       
+                        <a ga-event="header-sobre-nós" href="/product/add" class="nav-gray" title="SOBRE NÓS">ADICIONAR CAFÉ</a>
+                              </div>
+                          </li>
+                          <li class="cell small-12 large-auto menu-item ">
+                                              <div class="menu-item-holder">
+                                
+                       
+                        <a ga-event="header-sobre-nós" href="/account" class="nav-gray" title="SOBRE NÓS">CONTA</a>
+                              </div>
+                          </li>
+                          {% endif %}
                       <li class="cell small-12 large-auto menu-item ">
                                               <div class="menu-item-holder">
                                 
@@ -211,15 +226,19 @@
     <div class="grid-x">
       <div class="cell medium-10 large-12 desc">
         <div class="container-center cell small-12 sb-review-accordion">
-            <h1 id="title">Adicionar produto<br/><br/></h1>
-          <form class="comment-dsu-ratings-reviews-comment-type-form comment-form" data-drupal-selector="comment-form" action="/product/add" method="post" id="comment-form" accept-charset="UTF-8">
+            <h1 id="title">Adicionar café<br/><br/></h1>
+          <form class="comment-dsu-ratings-reviews-comment-type-form comment-form" data-drupal-selector="comment-form" action="/product/add" method="post" id="comment-form" accept-charset="UTF-8" enctype="multipart/form-data">
               <div class="grid-x">
-                <input class="js-text-full text-full form-text required" placeholder="Insira seu nome completo" oninput="setCustomValidity(&#039;&#039;);" oninvalid="this.setCustomValidity(&quot;Please fill out username field.&quot;);" data-drupal-selector="edit-subject-0-value" type="text" id="edit-subject-0-value" name="username" value="" size="60" maxlength="64" required="required" aria-required="true" />
-                <input class="js-text-full text-full form-text required" placeholder="Insira seu email" oninput="setCustomValidity(&#039;&#039;);" oninvalid="this.setCustomValidity(&quot;Please fill out username field.&quot;);" data-drupal-selector="edit-subject-0-value" type="text" id="edit-subject-0-value" name="username" value="" size="60" maxlength="64" required="required" aria-required="true" />
-                <input class="js-text-full text-full form-text required" placeholder="Insira seu nome de usuário" oninput="setCustomValidity(&#039;&#039;);" oninvalid="this.setCustomValidity(&quot;Please fill out username field.&quot;);" data-drupal-selector="edit-subject-0-value" type="text" id="edit-subject-0-value" name="username" value="" size="60" maxlength="64" required="required" aria-required="true" />                        
-                <input class="js-text-full text-full form-text required" placeholder="Insira sua palavra-passe actual" oninput="setCustomValidity(&#039;&#039;);" oninvalid="this.setCustomValidity(&quot;Please fill out username field.&quot;);" data-drupal-selector="edit-subject-0-value" type="text" id="edit-subject-0-value" name="username" value="" size="60" maxlength="64" required="required" aria-required="true" />                        
-                <input class="js-text-full text-full form-text required" placeholder="Insira sua nova palavra-passe" oninput="setCustomValidity(&#039;&#039;);" oninvalid="this.setCustomValidity(&quot;Please fill out username field.&quot;);" data-drupal-selector="edit-subject-0-value" type="text" id="edit-subject-0-value" name="username" value="" size="60" maxlength="64" required="required" aria-required="true" />                        
-                <input class="primary extended success button radius button--primary js-form-submit form-submit" data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="ATUALIZAR" />
+                <input class="js-text-full text-full form-text required" placeholder="Insira o nome do café" oninput="setCustomValidity(&#039;&#039;);" oninvalid="this.setCustomValidity(&quot;Please fill out username field.&quot;);" data-drupal-selector="edit-subject-0-value" type="text" id="edit-subject-0-value" name="name" value="" size="60" maxlength="64" required="required" aria-required="true" />
+                <input class="js-text-full text-full form-text required" placeholder="Insira a legenda" oninput="setCustomValidity(&#039;&#039;);" oninvalid="this.setCustomValidity(&quot;Please fill out username field.&quot;);" data-drupal-selector="edit-subject-0-value" type="text" id="edit-subject-0-value" name="subtitle" value="" size="60" maxlength="64" required="required" aria-required="true" />
+                <textarea class="js-text-full text-full form-text required" name="description">Insira a descrição do produto</textarea>
+                <select class="js-text-full text-full form-text required" name="p_format">
+                  <option>MOÍDO</option>
+                  <option>STARBUCKS BY NESPRESSO</option>
+                  <option>STARBUCKS BY NESCAFE DULCE GUSTO</option>
+                </select>
+                <input class="primary extended success button radius button--primary js-form-submit form-submit" type=file name='file'>
+                <input class="primary extended success button radius button--primary js-form-submit form-submit" data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="ADICIONAR" />
               </div>
           </form>
       </div>   
@@ -325,7 +344,7 @@
 
   
           
-  <div class="sb-footer-legal-logo">  <img src="index.html" width="425" height="106" alt="Footer img" typeof="foaf:Image" class="lazyload" data-src="/br/sites/default/files/2019-10/us-footer-logo-updated.jpg" />
+  <div class="sb-footer-legal-logo"> 
 
 </div>
 

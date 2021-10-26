@@ -43,7 +43,7 @@
 <link rel="revision" href="https://www.starbucksathome.com/br/product/starbucks-nescafe-dolce-gusto-blonde-espresso-roast/" />
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&amp;l='+l:'';j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NDPPDZ5');</script>
 
-    <title>STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto® | Starbucks</title>
+    <title>{{ product.name }} | MOONBUCKS</title>
     <link rel="stylesheet" media="all" href="http://www.starbucksathome.com/br/sites/default/files/css/css_R_FNhb9FZXPOUbWVzM0lCe2Hl9rD6ERJym1w-AKBvBE.css" />
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -97,7 +97,15 @@
 
             <div class="field-wrapper field field-paragraph--field-text-body field-name-field-text-body field-type-text-long field-label-hidden">
     <div class="field-items">
-          <div class="field-item"><p><a href="https://www.starbucksathome.com/br/localizador-de-lojas/">QUER LEVAR O STARBUCKS PARA A SUA CASA? <u>VEJA ONDE COMPRAR</u></a></p></div>
+          <div class="field-item"><p>
+            {% if current_user.is_authenticated %}
+            <a href="/logout">SAIR</a>
+          {% else %}
+            <a href="/login">ENTRAR</a> ou
+            <a href="/register">REGISTRAR</a>
+        {% endif %}
+          </p>
+          </div>
       </div>
 </div>
 
@@ -128,7 +136,7 @@
           <section class="grid-container no-margin background--white header-top-section">
             <div class="grid-x">
               <div class="cell small-6 medium-4 large-3">
-                                  <a ga-event="header-sbx-logo" class="logo-link" href="http://www.starbucksathome.com/br/" title="Starbucks logo">
+                                  <a ga-event="header-sbx-logo" class="logo-link" href="/" title="Starbucks logo">
                     <img alt="Starbucks logo" class="logo-img" src="http://www.starbucksathome.com/br/sites/default/files/SBUX_CAH_Logo_international_RGB-01_15.png">
                   </a>
                               </div>
@@ -155,100 +163,28 @@
           <li class="cell small-12 large-auto menu-item ">
                                                             <div class="menu-item-holder" id="nvda-menu-item-holder">
                     
-                      <a ga-event="header-explore-nossos-cafés" href="http://www.starbucksathome.com/br/explore-os-cafes-starbucks" class="nav-gray" title="EXPLORE NOSSOS CAFÉS" role="button">EXPLORE NOSSOS CAFÉS</a>
+                      <a ga-event="header-explore-nossos-cafés" href="/" class="nav-gray" title="EXPLORE NOSSOS CAFÉS" role="button">EXPLORE NOSSOS CAFÉS</a>
             <button aria-expanded="false" class="fas fa-chevron-down hide-for-large-only icon open-dropdown" aria-label="EXPLORE NOSSOS CAFÉS" data-opentxt="EXPLORE NOSSOS CAFÉS" data-closetxt="EXPLORE NOSSOS CAFÉS">
             </button>
                    </div>
                   <div class="grid-container dropdown sb-menu-level2 no-padding-small no-margin no-padding-medium">
-            <div class="grid-container no-margin no-padding">
-              <div class="grid-x grid-margin-x ">
-                <div class="cell small-11 small-offset-1 large-offset-0 large-9">
-                  <div class="navigation-links-wrapper">
-                    <ul class="grid-x grid-margin-x  no-margin level-2-wrapper large-up-3 three-column-wrapper">
-                                              <li class="cell small-12 ">
-                          <a ga-event="header-explore-o-café-por-formato "href="http://www.starbucksathome.com/br/explore-os-cafes-starbucks" class="item-category-header" title="EXPLORE O CAFÉ POR FORMATO">
-                            <img src="http://www.starbucksathome.com/br/sites/default/files/2019-09/experience-2%402x.png" class="show-for-large-only" alt="EXPLORE O CAFÉ POR FORMATO" aria-hidden="true">
-                            <span class="show-for-large-only nav-gray">EXPLORE O CAFÉ POR FORMATO</span>
-                            <span class="hide-for-large nav-list-subheading">EXPLORE O CAFÉ POR FORMATO</span>
-                          </a>
-                                                      <button class="fas fa-plus icon hide-for-large open-level-3" data-opentxt="Click to open level 3 options" data-closetxt="Click to close level 3 options" aria-label="Click to open level 3 options" aria-expanded="false">
-                            </button>
-                                                                                <div class="sb-menu-level3">
-                              <div class="level-3-header show-for-large">
-                                <span class="nav-list-subheading">
-                                  FORMATO
-                                </span>
-                              </div>
-                              <ul>
-                                                                  <li>
-                                    <img src="https://www.starbucksathome.com/br/sites/default/files/2019-09/ground.png" class="hide-for-large" aria-hidden="true" alt="MOÍDO">
-                                                                          <a ga-event="header-moído" href="http://www.starbucksathome.com/br/explore-os-cafes-starbucks/?format=Ground&amp;roast=&amp;collection=&amp;verismo=&amp;seasonal=" class="nav-list" title="MOÍDO"><span>MOÍDO</span></a>
-                                                                      </li>
-                                                                  <li>
-                                    <img src="https://www.starbucksathome.com/br/sites/default/files/2019-09/nespresso.png" class="hide-for-large" aria-hidden="true" alt="STARBUCKS® BY NESPRESSO®">
-                                                                          <a ga-event="header-starbucks-by-nespresso" href="http://www.starbucksathome.com/br/explore-os-cafes-starbucks/?format=nespresso&amp;roast=&amp;collection=&amp;verismo=&amp;seasonal=" class="nav-list" title="STARBUCKS® BY NESPRESSO®"><span>STARBUCKS<sup>®</sup> BY NESPRESSO<sup>®</sup></span></a>
-                                                                      </li>
-                                                                  <li>
-                                    <img src="https://www.starbucksathome.com/br/sites/default/files/2019-09/dolce-gusto.png" class="hide-for-large" aria-hidden="true" alt="STARBUCKS® BY NESCAFÉ® DOLCE GUSTO®">
-                                                                          <a ga-event="header-starbucks-by-nescafé-dolce-gusto" href="http://www.starbucksathome.com/br/explore-os-cafes-starbucks/?format=STARBUCKS-BY-NESCAF%C3%89-DOLCE-GUSTO&amp;roast=&amp;collection=&amp;verismo=&amp;seasonal=" class="nav-list" title="STARBUCKS® BY NESCAFÉ® DOLCE GUSTO®"><span>STARBUCKS<sup>®</sup> BY NESCAFÉ<sup>®</sup> DOLCE GUSTO<sup>®</sup></span></a>
-                                                                      </li>
-                                                              </ul>
-                            </div>
-                                                  </li>
-                                              <li class="cell small-12 ">
-                          <a ga-event="header-explore-o-café-por-tipo-de-torra "href="http://www.starbucksathome.com/br/explore-os-cafes-starbucks" class="item-category-header" title="EXPLORE O CAFÉ POR TIPO DE TORRA">
-                            <img src="http://www.starbucksathome.com/br/sites/default/files/2019-09/other-roast%402x_0.png" class="show-for-large-only" alt="EXPLORE O CAFÉ POR TIPO DE TORRA" aria-hidden="true">
-                            <span class="show-for-large-only nav-gray">EXPLORE O CAFÉ POR TIPO DE TORRA</span>
-                            <span class="hide-for-large nav-list-subheading">EXPLORE O CAFÉ POR TIPO DE TORRA</span>
-                          </a>
-                                                      <button class="fas fa-plus icon hide-for-large open-level-3" data-opentxt="Click to open level 3 options" data-closetxt="Click to close level 3 options" aria-label="Click to open level 3 options" aria-expanded="false">
-                            </button>
-                                                                                <div class="sb-menu-level3">
-                              <div class="level-3-header show-for-large">
-                                <span class="nav-list-subheading">
-                                  TORRA
-                                </span>
-                              </div>
-                              <ul>
-                                                                  <li>
-                                    <img src="https://www.starbucksathome.com/br/sites/default/files/2019-09/blonde-roast.png" class="hide-for-large" aria-hidden="true" alt="CLARA">
-                                                                          <a ga-event="header-clara" href="http://www.starbucksathome.com/br/explore-os-cafes-starbucks/?format=&amp;roast=CLARA&amp;collection=&amp;verismo=&amp;seasonal=" class="nav-list" title="CLARA"><span>CLARA</span></a>
-                                                                      </li>
-                                                                  <li>
-                                    <img src="https://www.starbucksathome.com/br/sites/default/files/2019-09/medium-roast.png" class="hide-for-large" aria-hidden="true" alt="MÉDIA">
-                                                                          <a ga-event="header-média" href="http://www.starbucksathome.com/br/explore-os-cafes-starbucks/?format=&amp;roast=M%C3%89DIA&amp;collection=&amp;verismo=&amp;seasonal=" class="nav-list" title="MÉDIA"><span>MÉDIA</span></a>
-                                                                      </li>
-                                                                  <li>
-                                    <img src="https://www.starbucksathome.com/br/sites/default/files/2019-09/dark-roast.png" class="hide-for-large" aria-hidden="true" alt="ESCURA">
-                                                                          <a ga-event="header-escura" href="http://www.starbucksathome.com/br/explore-os-cafes-starbucks/?format=&amp;roast=ESCURA&amp;collection=&amp;verismo=&amp;seasonal=" class="nav-list" title="ESCURA"><span>ESCURA</span></a>
-                                                                      </li>
-                                                                  <li>
-                                    <img src="https://www.starbucksathome.com/br/sites/default/files/2019-09/other-roast.png" class="hide-for-large" aria-hidden="true" alt="OUTRA">
-                                                                          <a ga-event="header-outra" href="http://www.starbucksathome.com/br/explore-os-cafes-starbucks/?format=&amp;roast=OUTRA&amp;collection=&amp;verismo=&amp;seasonal=" class="nav-list" title="OUTRA"><span>OUTRA</span></a>
-                                                                      </li>
-                                                              </ul>
-                            </div>
-                                                  </li>
-                                          </ul>
-                  </div>
-                </div>
-                <div class="cell large-3 show-for-large-only">
-                  <div class="featured-menu-product three-level-featured-wrapper">
-                    <div class="menu-image-container">
-                      <img src="http://www.starbucksathome.com/br/sites/default/files/2019-09/explore-coffee_desktop.png" alt="EXPLORE OS CAFÉS STARBUCKS®" />
-                    </div>
-                    <div class="featured-menu-details">
-                                            <div class="headline-h4">EXPLORE OS CAFÉS STARBUCKS<sup>®</sup></div>
-                                            
-                                              <a ga-event="header-explore-nossos-cafés" href="http://www.starbucksathome.com/br/explore-os-cafes-starbucks/" class="button white secondary" title="EXPLORE NOSSOS CAFÉS">EXPLORE NOSSOS CAFÉS</a>
-                       
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
               </li>
+              {% if current_user.is_authenticated %}
+                            <li class="cell small-12 large-auto menu-item ">
+                                              <div class="menu-item-holder">
+                                
+                       
+                        <a ga-event="header-sobre-nós" href="/product/add" class="nav-gray" title="SOBRE NÓS">ADICIONAR CAFÉ</a>
+                              </div>
+                          </li>
+                          <li class="cell small-12 large-auto menu-item ">
+                                              <div class="menu-item-holder">
+                                
+                       
+                        <a ga-event="header-sobre-nós" href="/account" class="nav-gray" title="SOBRE NÓS">CONTA</a>
+                              </div>
+                          </li>
+                          {% endif %}
           <li class="cell small-12 large-auto menu-item ">
                                   <div class="menu-item-holder">
                     
@@ -296,14 +232,9 @@
   <div class="grid-x">
     <div class="cell medium-6 large-6 desc">
             <div class="prod-description ">
-        <div class="breadcrums-holder" role="navigation" aria-label="STARBUCKS<sup>®</sup> Blonde Espresso<sup>®</sup> Roast by NESCAFÉ<sup>®</sup> Dolce Gusto<sup>®</sup>">
-                      <a ga-event="breadcrumb-pdp-cafés" href="https://www.starbucksathome.com/br/explore-os-cafes-starbucks/" class="breadcrumbs">CAFÉS / </a>
-                              <a class="breadcrumbs active" title="STARBUCKS<SUP>®</SUP> BLONDE ESPRESSO<SUP>®</SUP> ROAST BY NESCAFÉ<SUP>®</SUP> DOLCE GUSTO<SUP>®</SUP>"><span>STARBUCKS<sup>®</sup> BLONDE ESPRESSO<sup>®</sup> ROAST BY NESCAFÉ<sup>®</sup> DOLCE GUSTO<sup>®</sup></span></a>
-        </div>
         <div itemscope itemtype="https://schema.org/Product" itemid="https://www.starbucksathome.com/br/product/starbucks-nescafe-dolce-gusto-blonde-espresso-roast/" class="title green-divider mobile-divider-only">
-		            <p class="brand-name">Com sabor suave , este é nosso espresso mais leve.</p>
           <h1 itemprop="name" role="heading" aria-level="1" id="productcarouselheading">
-		  		    <span>STARBUCKS<sup>®</sup> BLONDE ESPRESSO<sup>®</sup> ROAST BY NESCAFÉ<sup>®</sup> DOLCE GUSTO<sup>®</sup></span>
+		  		    <span>{{ product.name }}</span>
 		  		  </h1>
                       <div class="rating-widget " tabindex="0" aria-label="Rating 0 out of 5 stars">
               <div class=" user-rating disabled inline fas" id="scroller-ratings" data-offset="100">
@@ -313,7 +244,7 @@
         
 
 <div class="cell small-12 medium-4 js-form-item form-item js-form-type-select form-item-vote js-form-item-vote form-no-label" >
-        <select data-drupal-selector="edit-vote" id="edit-vote--2" name="vote" class="form-select" aria-label="Star Rating"><option value="-">Select rating</option><option value="20">Give it 1/5</option><option value="40">Give it 2/5</option><option value="60">Give it 3/5</option><option value="80">Give it 4/5</option><option value="100">Give it 5/5</option></select>
+</h1>
         </div>
 
         </div>
@@ -321,38 +252,12 @@
               </div>
               <!-- <span class="user-rating-count show-for-medium">(0)</span> -->
             </div>
-                                <h4 class="flavours" role="heading"aria-level="2">NOTAS SUAVES E ADOCICADAS</h4>
+                                <h4 class="flavours" role="heading"aria-level="2">{{ product.subtitle }}</h4>
                   </div>
 		<!-- close schema.org div -->
                               <div class="sb-product-filter show-for-medium">
-              <div class="nav-gray">FORMATOS DISPONÍVEIS</div>
-              <div class="grid-x grid-margin-x small-up-4 available-formats">
-                <div class="sb-multiselect-box-wrapper" data-name="available_format" data-replaceplaceholder ="true">
-                  <span id="available_format-STARBUCKS® BY NESCAFÉ® DOLCE GUSTO®" class="hide"></span>
-                  <button aria-labelledby="available_format" aria-haspopup="listbox" class="sb-multiselect-box" aria-expanded="false">
-                    <span>
-				      <img src="https://www.starbucksathome.com/br/sites/default/files/2019-09/dolce-gusto.png" alt="STARBUCKS® BY NESCAFÉ® DOLCE GUSTO®" />STARBUCKS<sup>®</sup> BY NESCAFÉ<sup>®</sup> DOLCE GUSTO<sup>®</sup>
-                    </span>
-                    <span class="count-selection hide">
-                      <i class="selected-counts"></i>
-                      <span class="sr-only">Items selected</span>
-                    </span>
-                  </button>
-                  <ul aria-labelledby="available_format"  tabindex="-1" role="listbox"  class="sb-multiselect-box-list hidden" aria-activedescendant="1511">
-                                                                  <li data-value="1511" role="option" data-format-disclaimer-text="" data-bv-product-id="" class="focused" aria-selected="true" data-nespresso-components-visibility = "false"
-						 data-product-title="STARBUCKS<sup>®</sup> BLONDE ESPRESSO<sup>®</sup> ROAST BY NESCAFÉ<sup>®</sup> DOLCE GUSTO<sup>®</sup>"  data-fusepump-id="v3vp7qx">
-                          <img src="https://www.starbucksathome.com/br/sites/default/files/2019-09/dolce-gusto.png" alt="STARBUCKS® BY NESCAFÉ® DOLCE GUSTO®"> STARBUCKS<sup>®</sup> BY NESCAFÉ<sup>®</sup> DOLCE GUSTO<sup>®</sup>
-                        </li>
-                                                                                        <li data-value="1506" role="option" data-format-disclaimer-text="" data-bv-product-id="" class="" aria-selected="false" data-nespresso-components-visibility = "true"
-						 data-product-title="STARBUCKS<sup>®</sup> BLONDE ESPRESSO<sup>®</sup> ROAST BY NESCAFÉ<sup>®</sup> DOLCE GUSTO<sup>®</sup>"  data-fusepump-id="v3vp7qx">
-                          <img src="https://www.starbucksathome.com/br/sites/default/files/2019-09/nespresso.png" alt="STARBUCKS® BY NESPRESSO®"> STARBUCKS<sup>®</sup> BY NESPRESSO<sup>®</sup>
-                        </li>
-                                                            </ul>
-                </div>
-              </div>
-              <div class="product-disclaimer-block">
-                <span class="disclaimer-text">   </span>
-              </div>
+              <div class="nav-gray">FORMATO: {{ product.p_format }}</div>
+              <div class="nav-gray">CONTATO: {{ user.email }}</div>
             </div>
                         </div>
       </div>
@@ -360,39 +265,13 @@
     <script type="text/javascript">
         var productFormat = ['<div class="product-image-slider"><div data-thumb="/br/sites/default/files/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_C1C1_website_0.jpg" data-thumbalt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®"><picture ><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="" media="(min-width: 1024px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/pdp_stage_gallery_us/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_C1C1_website_0.jpg?itok=_xrWkrjq 1x"/><!--[if IE 9]></video><![endif]--><img image_lazyload="no" src="http://www.starbucksathome.com/br/sites/default/files/styles/pdp_stage_gallery_us/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_C1C1_website_0.jpg?itok=_xrWkrjq" alt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®" typeof="foaf:Image" /></picture></div><div data-thumb="/br/sites/default/files/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_M_01_website.jpg" data-thumbalt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®"><picture ><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="" media="(min-width: 1024px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/pdp_stage_gallery_us/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_M_01_website.jpg?itok=_4iylrZo 1x"/><!--[if IE 9]></video><![endif]--><img image_lazyload="no" src="http://www.starbucksathome.com/br/sites/default/files/styles/pdp_stage_gallery_us/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_M_01_website.jpg?itok=_4iylrZo" alt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®" typeof="foaf:Image" /></picture></div><div data-thumb="/br/sites/default/files/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_Right_website.jpg" data-thumbalt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®"><picture ><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="" media="(min-width: 1024px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/pdp_stage_gallery_us/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_Right_website.jpg?itok=NauWIkBf 1x"/><!--[if IE 9]></video><![endif]--><img image_lazyload="no" src="http://www.starbucksathome.com/br/sites/default/files/styles/pdp_stage_gallery_us/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_Right_website.jpg?itok=NauWIkBf" alt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®" typeof="foaf:Image" /></picture></div></div>','              <div class="product-image-slider"><div data-thumb="/br/sites/default/files/2019-09/CAH_Global_BlondeEspressoRoast_Nespresso_Box_Front_1.jpg" data-thumbalt="STARBUCKS BY NESPRESSO"><picture ><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="" media="(min-width: 1024px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/pdp_stage_gallery_us/public/2019-09/CAH_Global_BlondeEspressoRoast_Nespresso_Box_Front_1.jpg?itok=uwQcccd8 1x"/><!--[if IE 9]></video><![endif]--><img image_lazyload="no" src="http://www.starbucksathome.com/br/sites/default/files/styles/pdp_stage_gallery_us/public/2019-09/CAH_Global_BlondeEspressoRoast_Nespresso_Box_Front_1.jpg?itok=uwQcccd8" alt="STARBUCKS BY NESPRESSO" typeof="foaf:Image" /></picture></div><div data-thumb="/br/sites/default/files/2019-09/CAH_Global_BlondeEspressoRoast_Nespresso_Box_Back_0.jpg" data-thumbalt="STARBUCKS BY NESPRESSO"><picture ><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="" media="(min-width: 1024px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/pdp_stage_gallery_us/public/2019-09/CAH_Global_BlondeEspressoRoast_Nespresso_Box_Back_0.jpg?itok=mW5kXDlB 1x"/><!--[if IE 9]></video><![endif]--><img image_lazyload="no" src="http://www.starbucksathome.com/br/sites/default/files/styles/pdp_stage_gallery_us/public/2019-09/CAH_Global_BlondeEspressoRoast_Nespresso_Box_Back_0.jpg?itok=mW5kXDlB" alt="STARBUCKS BY NESPRESSO" typeof="foaf:Image" /></picture></div></div>'];
     </script>
-    <div class="slider-section">
-      <div class="controls__container controls"></div>
-                              <div class="roast-type roast-tag nav-gray background--macaroni-and-cheese " data-bgcolor="#EDAF26" data-fontcolor="" style="background:#EDAF26;color:;">
-              CLARA
-            </div>
+    <div class="slider-section">    
                           <div class="coffee-formats">
           <div class="product-image-slider">
-                                                      <div data-thumb="/br/sites/default/files/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_C1C1_website_0.jpg" data-thumbalt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®">
+   
+                                                        <div>
                     <picture >
-                <!--[if IE 9]><video style="display: none;"><![endif]-->
-              <source srcset="" media="(min-width: 1024px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/pdp_stage_gallery/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_C1C1_website_0.jpg?itok=SNbXshYC 1x"/>
-            <!--[if IE 9]></video><![endif]-->
-            <img image_lazyload="no" src="http://www.starbucksathome.com/br/sites/default/files/styles/pdp_stage_gallery/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_C1C1_website_0.jpg?itok=SNbXshYC" alt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®" typeof="foaf:Image" />
-
-  </picture>
-
-                </div>
-                                                        <div data-thumb="/br/sites/default/files/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_M_01_website.jpg" data-thumbalt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®">
-                    <picture >
-                <!--[if IE 9]><video style="display: none;"><![endif]-->
-              <source srcset="" media="(min-width: 1024px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/pdp_stage_gallery/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_M_01_website.jpg?itok=TVPw-kT8 1x"/>
-            <!--[if IE 9]></video><![endif]-->
-            <img image_lazyload="no" src="http://www.starbucksathome.com/br/sites/default/files/styles/pdp_stage_gallery/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_M_01_website.jpg?itok=TVPw-kT8" alt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®" typeof="foaf:Image" />
-
-  </picture>
-
-                </div>
-                                                        <div data-thumb="/br/sites/default/files/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_Right_website.jpg" data-thumbalt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®">
-                    <picture >
-                <!--[if IE 9]><video style="display: none;"><![endif]-->
-              <source srcset="" media="(min-width: 1024px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/pdp_stage_gallery/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_Right_website.jpg?itok=lC7IsU29 1x"/>
-            <!--[if IE 9]></video><![endif]-->
-            <img image_lazyload="no" src="http://www.starbucksathome.com/br/sites/default/files/styles/pdp_stage_gallery/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_Right_website.jpg?itok=lC7IsU29" alt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®" typeof="foaf:Image" />
+            <img image_lazyload="no" src="/images/product/{{ product.image_url }}" alt="{{ product.name }}" typeof="foaf:Image" />
 
   </picture>
 
@@ -404,35 +283,6 @@
     <div class="cell medium-6 large-6 grid-container no-margin no-padding desc-content medium-offset-6">
       <!-- for mobile display -->
                         <div class="sb-product-filter hide-for-medium">
-            <div class="nav-gray">FORMATOS DISPONÍVEIS</div>
-            <div class="grid-x grid-margin-x small-up-4 available-formats">
-              <div class="sb-multiselect-box-wrapper" data-name="available_format" data-replaceplaceholder ="true">
-                <span id="available_format" class="hide"></span>
-                <button aria-haspopup="listbox" aria-labelledby="available_format" class="sb-multiselect-box" aria-expanded="false">
-                  <span>
-                    <img src="https://www.starbucksathome.com/br/sites/default/files/2019-09/dolce-gusto.png" alt="STARBUCKS® BY NESCAFÉ® DOLCE GUSTO®" />STARBUCKS® BY NESCAFÉ® DOLCE GUSTO®
-                  </span>
-                  <span class="count-selection hide">
-                    <i class="selected-counts"></i>
-                    <span class="sr-only">Items selected</span>
-                  </span>
-                </button>
-                <ul tabindex="-1" role="listbox" aria-labelledby="available_format" class="sb-multiselect-box-list hidden" aria-activedescendant="1511">
-                                                            <li data-value="1511" role="option" data-format-disclaimer-text="" data-bv-product-id="" aria-selected="true" data-nespresso-components-visibility = "false"
-					   data-product-title="STARBUCKS<sup>®</sup> BLONDE ESPRESSO<sup>®</sup> ROAST BY NESCAFÉ<sup>®</sup> DOLCE GUSTO<sup>®</sup>" 					  data-fusepump-id="v3vp7qx">
-                        <img src="https://www.starbucksathome.com/br/sites/default/files/2019-09/dolce-gusto.png" alt="STARBUCKS® BY NESCAFÉ® DOLCE GUSTO®"> STARBUCKS® BY NESCAFÉ® DOLCE GUSTO®
-                      </li>
-                                                                                <li data-value="1506" role="option" data-format-disclaimer-text="" data-bv-product-id="" aria-selected="false" data-nespresso-components-visibility = "true"
-					   data-product-title="STARBUCKS<sup>®</sup> BLONDE ESPRESSO<sup>®</sup> ROAST BY NESCAFÉ<sup>®</sup> DOLCE GUSTO<sup>®</sup>" 					  data-fusepump-id="v3vp7qx">
-                        <img src="https://www.starbucksathome.com/br/sites/default/files/2019-09/nespresso.png" alt="STARBUCKS® BY NESPRESSO®"> STARBUCKS® BY NESPRESSO®
-                      </li>
-                                                      </ul>
-              </div>
-            </div>
-            <div class="product-disclaimer-block">
-              <span class="disclaimer-text">  </span>
-            </div>
-          </div>
                     <!-- for mobile display ends here -->
               <div id="pdp-buy-now" data-productName="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®" data-productBrand ="STARBUCKS" data-productSKUId="07" data-productCategory="CAFÉS">
           <div class="buy-now">
@@ -460,25 +310,16 @@
               <div class="grid-x featured-content-container mobile-reverse">
                 <div class="cell small-12 medium-6 align-self-middle sb-featured-content-details green-divider">
                   <div class="sb-featured-content-icons">
-                                          <img class="lazyload" src="https://www.starbucksathome.com/br/sites/default/files/2019-09/blonde-roast_1.png" alt="blonde-roast">
                                       </div>
 
                                     <div class="sb-featured-content-text copy-txt">
                                           <h4 >DESCRIÇÃO</h4>
-                                                              <p>Quase 5 décadas procurando, misturando e torrando cafés nos trouxeram aqui: um segundo café espresso ousadamente suave. Este blend especial de grãos de café da América Latina foi torrado para alcançar notas doces e vibrantes. Sedoso e equilibrado, este café destaca a doçura do leite, fazendo bebidas clássicas de café espresso super suaves e eliminando o amargor.</p>
+                                                              <p>{{ product.description }}.</p>
                                       </div>
                      					  
                 </div>
                 <div class="cell small-12 medium-6 sb-featured-content-image">
-                                        <picture >
-                <!--[if IE 9]><video style="display: none;"><![endif]-->
-              <source srcset="" media="(min-width: 1200px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_desktop/public/Starbucks_Social_Roast_Spectrum_Waterfall_Blonde_800x800.jpg?itok=BvVAHdYM 1x"/>
-              <source srcset="" media="(min-width: 468px) and (max-width: 768px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_tablet/public/Starbucks_Social_Roast_Spectrum_Waterfall_Blonde_800x800.jpg?itok=FrBR3_qt 1x"/>
-              <source srcset="" media="(min-width: 0px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_mobile/public/Starbucks_Social_Roast_Spectrum_Waterfall_Blonde_800x800.jpg?itok=5hKYgZ7O 1x"/>
-            <!--[if IE 9]></video><![endif]-->
-            <img src="index.html" alt="Blond" title="" typeof="foaf:Image" class="lazyload" data-src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
 
-  </picture>
 
                                   </div>
               </div>
@@ -489,163 +330,9 @@
   
   
 
-          <section class="grid-container full sb-featured-product-home-us hide" data-visibility="true">
-              <section class="grid-container sb-us-featured-content-home no-padding-small ">
-          <div class="grid-x grid-margin-x small-margin-collapse-custom">
-            <div class="cell small-12 sb-featured-content">
-              <div class="grid-x featured-content-container mobile-reverse">
-                <div class="cell small-12 medium-6 align-self-middle sb-featured-content-details green-divider">
-                  <div class="sb-featured-content-icons">
-                                          <img class="lazyload" src="https://www.starbucksathome.com/br/sites/default/files/2019-09/blonde-roast_0_0.png" alt="blonde-roast">
-                                      </div>
-
-                                    <div class="sb-featured-content-text copy-txt">
-                                          <h4 >DESCRIÇÃO</h4>
-                                                              <p>Quase 5 décadas procurando, misturando e torrando cafés nos trouxeram aqui: um segundo café espresso ousadamente suave. Este blend especial de grãos de café da América Latina foi torrado para alcançar notas doces e vibrantes. Sedoso e equilibrado, este café destaca a doçura do leite, fazendo bebidas clássicas de café espresso super suaves e eliminando o amargor.</p>
-                                      </div>
-                     					  
-                </div>
-                <div class="cell small-12 medium-6 sb-featured-content-image">
-                                        <picture >
-                <!--[if IE 9]><video style="display: none;"><![endif]-->
-              <source srcset="" media="(min-width: 1200px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_desktop/public/Starbucks_Social_Roast_Spectrum_Waterfall_Blonde_800x800.jpg?itok=BvVAHdYM 1x"/>
-              <source srcset="" media="(min-width: 468px) and (max-width: 768px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_tablet/public/Starbucks_Social_Roast_Spectrum_Waterfall_Blonde_800x800.jpg?itok=FrBR3_qt 1x"/>
-              <source srcset="" media="(min-width: 0px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_mobile/public/Starbucks_Social_Roast_Spectrum_Waterfall_Blonde_800x800.jpg?itok=5hKYgZ7O 1x"/>
-            <!--[if IE 9]></video><![endif]-->
-            <img src="index.html" alt="Blond" title="" typeof="foaf:Image" class="lazyload" data-src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
-
-  </picture>
-
-                                  </div>
-              </div>
-            </div>
-          </div>
-        </section>
+         
           </section>
-  
-    
 
-  
-
-                    <section class="grid-container full sb-featured-product-home-us hide" data-visibility="true">
-              <section class="grid-container no-padding-small no-margin-from-bottom-medium">
-          <div class="grid-x small-margin-collapse-custom">
-            <div class="cell small-12 medium-6  sb-featured-content-home-image green-divider">
-                                <picture >
-                <!--[if IE 9]><video style="display: none;"><![endif]-->
-              <source srcset="" media="(min-width: 1200px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_desktop/public/ALUMINIUM_BLONDE_ESPRESSO_ROAST_0.jpg?itok=ks98rRwm 1x"/>
-              <source srcset="" media="(min-width: 468px) and (max-width: 768px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_tablet/public/ALUMINIUM_BLONDE_ESPRESSO_ROAST_0.jpg?itok=SivbN2bM 1x"/>
-              <source srcset="" media="(min-width: 0px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_mobile/public/ALUMINIUM_BLONDE_ESPRESSO_ROAST_0.jpg?itok=7xgWxX9g 1x"/>
-            <!--[if IE 9]></video><![endif]-->
-            <img src="index.html" alt="Por que usamos alumínio?" title="" typeof="foaf:Image" class="lazyload" data-src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
-
-  </picture>
-
-               
-            </div>
-            <div class="cell small-12  medium-6 large-4 large-offset-1 align-self-middle sb-featured-content-home-details">
-              <div class="title-details">
-                <div class="sb-featured-content-icons">
-                                  </div>
-                                  <h3 >
-                    Por que usamos alumínio?
-                  </h3>
-                                                </div>
-              <div class="copy-txt">
-                                                  <p>O café é protegido do exterior, enquanto que os aromas são preservados no interior. O alumínio é o material mais protetor atualmente disponível. Ele garante a frescura dos aromas e dos sabores dos nossos cafés. Leve, mas forte, o alumínio protege-o de elementos externos que podem afetar o café - oxigénio, humidade e luz.</p>
-                
-              </div>
-                 	
-			  <!-- Adimo Data end -->
-            </div>
-          </div>
-        </section>
-          </section>
-  
-  
-
-                    <section class="grid-container full sb-featured-product-home-us hide" data-visibility="true">
-              <section class="grid-container sb-us-featured-content-home no-padding-small no-margin-from-both-medium">
-          <div class="grid-x grid-margin-x small-margin-collapse-custom">
-            <div class="cell small-12 sb-featured-content">
-              <div class="grid-x featured-content-container mobile-reverse">
-                <div class="cell small-12 medium-6 align-self-middle sb-featured-content-details green-divider">
-                  <div class="sb-featured-content-icons">
-                                      </div>
-
-                                      <h3 >
-                      Recicle as suas cápsulas
-                    </h3>
-                                                        <div class="sb-featured-content-text copy-txt">
-                                                              <p>Pontos de recolha:  Traga as suas cápsulas usadas a um centro de resíduos ou entregue-as na boutique Nespresso mais perto de si.</p>
-
-<p> </p>
-
-<p>Reciclagem em casa: Para usar o serviço de reciclagem em casa, pode pedir um saco de reciclagem gratuito - contacte o serviço de apoio ao cliente: <a href="tel:0800-776-0606">0800-776-0606</a></p>
-
-<p> </p>
-
-<p>Cada saco tem capacidade para até 200 cápsulas.</p>
-                                      </div>
-                     					  
-                </div>
-                <div class="cell small-12 medium-6 sb-featured-content-image">
-                                        <picture >
-                <!--[if IE 9]><video style="display: none;"><![endif]-->
-              <source srcset="" media="(min-width: 1200px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_desktop/public/RECYCLE-GENERIC_BLONDE_ESPRESSO_ROAST_0.jpg?itok=fSkvtrbf 1x"/>
-              <source srcset="" media="(min-width: 468px) and (max-width: 768px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_tablet/public/RECYCLE-GENERIC_BLONDE_ESPRESSO_ROAST_0.jpg?itok=eFav93Sk 1x"/>
-              <source srcset="" media="(min-width: 0px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_mobile/public/RECYCLE-GENERIC_BLONDE_ESPRESSO_ROAST_0.jpg?itok=y1GSdTJw 1x"/>
-            <!--[if IE 9]></video><![endif]-->
-            <img src="index.html" alt="Recicle as suas cápsulas" title="" typeof="foaf:Image" class="lazyload" data-src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
-
-  </picture>
-
-                                  </div>
-              </div>
-            </div>
-          </div>
-        </section>
-          </section>
-  
-  
-
-                    <section class="grid-container full sb-featured-product-home-us hide" data-visibility="true">
-              <section class="grid-container no-padding-small no-margin-from-top-medium">
-          <div class="grid-x small-margin-collapse-custom">
-            <div class="cell small-12 medium-6  sb-featured-content-home-image green-divider">
-                                <picture >
-                <!--[if IE 9]><video style="display: none;"><![endif]-->
-              <source srcset="" media="(min-width: 1200px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_desktop/public/HOTLINE_5.jpg?itok=NxO7Eq-Q 1x"/>
-              <source srcset="" media="(min-width: 468px) and (max-width: 768px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_tablet/public/HOTLINE_5.jpg?itok=Zch4Nl22 1x"/>
-              <source srcset="" media="(min-width: 0px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/featured_product_mobile/public/HOTLINE_5.jpg?itok=E2txhMME 1x"/>
-            <!--[if IE 9]></video><![endif]-->
-            <img src="index.html" alt="Questões sobre café?" title="" typeof="foaf:Image" class="lazyload" data-src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
-
-  </picture>
-
-               
-            </div>
-            <div class="cell small-12  medium-6 large-4 large-offset-1 align-self-middle sb-featured-content-home-details">
-              <div class="title-details">
-                <div class="sb-featured-content-icons">
-                                  </div>
-                                  <h3 >
-                    Questões sobre café?
-                  </h3>
-                                                </div>
-              <div class="copy-txt">
-                                                  <p>Os nossos especialistas terão todo o gosto em ajudar. Contacte-nos através do <a href="tel:0800-776-0606">0800-776-0606</a> para quaisquer questões relacionadas com a Starbucks® by Nespresso®.</p>
-                
-              </div>
-                 	
-			  <!-- Adimo Data end -->
-            </div>
-          </div>
-        </section>
-          </section>
-  
-
-   
    
   <section class="grid-container write-review-section data-layer-options " data-layer-action="false" data-layer='{"Category":"Add Your Opinion","Action":"STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®", "Label":"submit", "event":"auto_event"}' data-eventLabel="Product" data-contentName="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®">
 	<div class="grid-x">
@@ -661,8 +348,7 @@
 <div class="cell small-12 medium-6 product-info-block large-20">
 
    <div class="info-holder">
-   	<div class="headline-h2" id="select-rating">Avaliação <span class="">STARBUCKS<sup>®</sup> Blonde Espresso<sup>®</sup> Roast by NESCAFÉ<sup>®</sup> Dolce Gusto<sup>®</sup></span></div>
-   	<p class="select-rating">Selecione a avaliação *</p>
+   	<div class="headline-h2" id="select-rating">Avaliação <span class="">{{ product.name }}</span></div>   	
     <div class="rating-widget" role="group" aria-labelledby="select-rating">
             <div class="user-rating inline fas">
             	<div class="field--type-fivestar field--name-field-dsu-ratings field--widget-fivestar-stars js-form-wrapper form-wrapper" data-drupal-selector="edit-field-dsu-ratings-wrapper" id="edit-field-dsu-ratings-wrapper">      
@@ -673,21 +359,6 @@
                                                                 Ratings
                     </label>
 
-
-
-
-
-        <div class="clearfix fivestar-user-stars fivestar-form-item fivestar-basic">
-
-<div class="cell small-12 medium-4 js-form-item form-item js-form-type-fivestar form-item-field-dsu-ratings-0-rating js-form-item-field-dsu-ratings-0-rating form-no-label" >
-        
-
-<div class="cell small-12 medium-4 js-form-item form-item js-form-type-select form-item-field-dsu-ratings-0-rating js-form-item-field-dsu-ratings-0-rating form-no-label" >
-        <select data-drupal-selector="edit-field-dsu-ratings-0-rating" id="edit-field-dsu-ratings-0-rating--2" name="field_dsu_ratings[0][rating]" class="form-select"><option value="-">Select rating</option><option value="20">Give it 1/5</option><option value="40">Give it 2/5</option><option value="60">Give it 3/5</option><option value="80" selected="selected">Give it 4/5</option><option value="100">Give it 5/5</option></select>
-        </div>
-
-        </div>
-</div>
         </div>
 
   </div>
@@ -709,7 +380,7 @@
 
 
 
-        <input class="js-text-full text-full form-text required" placeholder="Enter your subject" oninput="setCustomValidity(&#039;&#039;);" oninvalid="this.setCustomValidity(&quot;Please fill out subject field.&quot;);" data-drupal-selector="edit-subject-0-value" type="text" id="edit-subject-0-value" name="subject[0][value]" value="" size="60" maxlength="64" required="required" aria-required="true" />
+        <input class="js-text-full text-full form-text required" placeholder="Insira o assunto" oninput="setCustomValidity(&#039;&#039;);" oninvalid="this.setCustomValidity(&quot;Please fill out subject field.&quot;);" data-drupal-selector="edit-subject-0-value" type="text" id="edit-subject-0-value" name="subject[0][value]" value="" size="60" maxlength="64" required="required" aria-required="true" />
 
         </div>
 
@@ -893,7 +564,7 @@
 
   
           
-  <div class="sb-footer-legal-logo">  <img src="index.html" width="425" height="106" alt="Footer img" typeof="foaf:Image" class="lazyload" data-src="/br/sites/default/files/2019-10/us-footer-logo-updated.jpg" />
+  <div class="sb-footer-legal-logo">
 
 </div>
 

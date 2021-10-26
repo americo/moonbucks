@@ -21,7 +21,7 @@
 <link rel="revision" href="https://www.starbucksathome.com/br/explore-os-cafes-starbucks/" />
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&amp;l='+l:'';j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NDPPDZ5');</script>
 
-    <title>MOONBUCKS | Perfil</title>
+    <title>MOONBUCKS | {{ user.name }}</title>
     <link rel="stylesheet" media="all" href="http://www.starbucksathome.com/br/sites/default/files/css/css_R_FNhb9FZXPOUbWVzM0lCe2Hl9rD6ERJym1w-AKBvBE.css" />
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -77,8 +77,12 @@
     <div class="field-items">
           <div class="field-item">
             <p>
-              <a href="/login">ENTRAR</a> ou
-              <a href="/register">REGISTRAR</a>
+              {% if current_user.is_authenticated %}
+                  <a href="/logout">SAIR</a>
+                {% else %}
+                  <a href="/login">ENTRAR</a> ou
+                  <a href="/register">REGISTRAR</a>
+              {% endif %}
             </p>
           </div>
       </div>
@@ -145,6 +149,22 @@
                               <div class="grid-container dropdown sb-menu-level2 no-padding-small no-margin no-padding-medium">
                       </div>
                           </li>
+                          {% if current_user.is_authenticated %}
+                            <li class="cell small-12 large-auto menu-item ">
+                                              <div class="menu-item-holder">
+                                
+                       
+                        <a ga-event="header-sobre-nós" href="/product/add" class="nav-gray" title="SOBRE NÓS">ADICIONAR CAFÉ</a>
+                              </div>
+                          </li>
+                          <li class="cell small-12 large-auto menu-item ">
+                                              <div class="menu-item-holder">
+                                
+                       
+                        <a ga-event="header-sobre-nós" href="/account" class="nav-gray" title="SOBRE NÓS">CONTA</a>
+                              </div>
+                          </li>
+                          {% endif %}
                       <li class="cell small-12 large-auto menu-item ">
                                               <div class="menu-item-holder">
                                 
@@ -204,18 +224,15 @@
       <div class="cell large-7 small-12 medium-12">
         <div class="sb-us-banner-image">
           		                  <picture>
-                <source media="(min-width: 1024px)" srcset="https://www.starbucksathome.com/br/sites/default/files/2019-09/explore-coffee_desktop_1.png">
-                <source media="(min-width: 768px)" srcset="https://www.starbucksathome.com/br/sites/default/files/2019-09/tablet-explore-coffees.png">
-                <source media="(min-width: 0px)" srcset="https://www.starbucksathome.com/br/sites/default/files/2019-09/plp-mobile-header.png">
-                <img src="https://www.starbucksathome.com/br/sites/default/files/2019-09/explore-coffee_desktop_1.png" alt="Explore os Cafés Starbucks®">
+                <img src="/images/profile/{{ user.cover_url }}" alt="Explore os Cafés Starbucks®">
               </picture>
             		          </div>
       </div>
       <div class="cell small-12 medium-12 large-5 sb-us-banner-content sb-us-generic-banner-content"  data-bgcolor="#f2efed" >
         		
         		
-                  <h1  data-fontcolor="#32312d" style="color:#32312d">NOME COMPLETO<span class="subscript">®</span></h1>
-                  <p>Trocar foto de capa</p>
+                  <h1  data-fontcolor="#32312d" style="color:#32312d">{{ user.name }}<span class="subscript">®</span></h1>
+                  <p>EMAIL: {{ user.email }}</p>
         		
         <div class="subheading"><p class="body-large" data-fontcolor="#32312d" style="color:#32312d"></p></div>		
         
@@ -232,63 +249,26 @@
         
               <div class="roast-list row">
                 <div class="sb-us-slick">
-                    <div class="cell">
-                          <div class="sb-us-product-card  roast-products element-visible background--white" 
-                               data-roasttypeid="0" data-roasttype="CLARA"
-                               data-roastcount="2 BLENDS" data-description="" 
-                               data-spectrumid=1 data-default="true" data-arialevel="">
-                                <div class="sb-us-product-card-image">
-                                    <a ga-event="roast-spectrum-starbucks-blonde-espresso-roast-by-nescafé-dolce-gusto" href="https://www.starbucksathome.com/br/product/starbucks-nescafe-dolce-gusto-blonde-espresso-roast/">
-                                        <picture >
-                                                <!--[if IE 9]><video style="display: none;"><![endif]-->
-                                            <source srcset="" media="(min-width: 1024px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/recipe_inspiration_desktop_us/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_C1C1_website.jpg?itok=ChegKVNu 1x"/>
-                                            <source srcset="" media="(min-width: 768px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/recipe_inspiration_tablet_us/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_C1C1_website.jpg?itok=m_KYdj5e 1x"/>
-                                            <source srcset="" media="(min-width: 0px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/recipe_inspiration_mobile_us/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_C1C1_website.jpg?itok=t4efEc5a 1x"/>
-                                            <!--[if IE 9]></video><![endif]-->
-                                            <img src="index.html" alt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®" typeof="foaf:Image" class="lazyload" data-src="/br/sites/default/files/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_C1C1_website.jpg" />
-                                        </picture>
-                                    </a>
-                               </div>
-                               <div class="sb-us-product-card-details">
-                                    <h3 ><a ga-event="roast-spectrum-starbucks-blonde-espresso-roast-by-nescafé-dolce-gusto" href="https://www.starbucksathome.com/br/product/starbucks-nescafe-dolce-gusto-blonde-espresso-roast/"><span>STARBUCKS<sup>®</sup> Blonde Espresso<sup>®</sup> Roast by NESCAFÉ<sup>®</sup> Dolce Gusto<sup>®</sup></span></span></a></h3>
-                                        <h4 >NOTAS SUAVES E ADOCICADAS</h4>
-                               </div>
-                                <div class="sb-us-product-card-flavour sb-us-roast-tag">
-                                    <div class="background--macaroni-and-cheese " data-bgcolor="#EDAF26" data-fontcolor="" style="background:#EDAF26;color:;">
-                                        CLARA
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-
+                  {% for product in products %}
                     <div class="cell">
                         <div class="sb-us-product-card  roast-products element-visible background--white" 
                              data-roasttypeid="0" data-roasttype="CLARA"
                              data-roastcount="2 BLENDS" data-description="" 
                              data-spectrumid=1 data-default="true" data-arialevel="">
                               <div class="sb-us-product-card-image">
-                                  <a ga-event="roast-spectrum-starbucks-blonde-espresso-roast-by-nescafé-dolce-gusto" href="https://www.starbucksathome.com/br/product/starbucks-nescafe-dolce-gusto-blonde-espresso-roast/">
+                                  <a ga-event="roast-spectrum-starbucks-blonde-espresso-roast-by-nescafé-dolce-gusto" href="/product/{{ product.id }}">
                                       <picture >
-                                              <!--[if IE 9]><video style="display: none;"><![endif]-->
-                                          <source srcset="" media="(min-width: 1024px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/recipe_inspiration_desktop_us/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_C1C1_website.jpg?itok=ChegKVNu 1x"/>
-                                          <source srcset="" media="(min-width: 768px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/recipe_inspiration_tablet_us/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_C1C1_website.jpg?itok=m_KYdj5e 1x"/>
-                                          <source srcset="" media="(min-width: 0px)" type="image/jpeg" data-srcset="/br/sites/default/files/styles/recipe_inspiration_mobile_us/public/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_C1C1_website.jpg?itok=t4efEc5a 1x"/>
-                                          <!--[if IE 9]></video><![endif]-->
-                                          <img src="index.html" alt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®" typeof="foaf:Image" class="lazyload" data-src="/br/sites/default/files/2021-03/C5_7613036943321_BR%2C%20AR%2C%20US%2C%20UY_C1C1_website.jpg" />
+                                          <img src="index.html" alt="STARBUCKS® Blonde Espresso® Roast by NESCAFÉ® Dolce Gusto®" typeof="foaf:Image" class="lazyload" data-src="/images/product/{{ product.image_url }}" />
                                       </picture>
                                   </a>
                              </div>
                              <div class="sb-us-product-card-details">
-                                  <h3 ><a ga-event="roast-spectrum-starbucks-blonde-espresso-roast-by-nescafé-dolce-gusto" href="https://www.starbucksathome.com/br/product/starbucks-nescafe-dolce-gusto-blonde-espresso-roast/"><span>STARBUCKS<sup>®</sup> Blonde Espresso<sup>®</sup> Roast by NESCAFÉ<sup>®</sup> Dolce Gusto<sup>®</sup></span></span></a></h3>
-                                      <h4 >NOTAS SUAVES E ADOCICADAS</h4>
+                                  <h3 ><a ga-event="roast-spectrum-starbucks-blonde-espresso-roast-by-nescafé-dolce-gusto" href="/product/{{ product.id }}"><span>{{ product.name }}</span></a></h3>
+                                      <h4 >{{ product.subtitle }}</h4>
                              </div>
-                              <div class="sb-us-product-card-flavour sb-us-roast-tag">
-                                  <div class="background--macaroni-and-cheese " data-bgcolor="#EDAF26" data-fontcolor="" style="background:#EDAF26;color:;">
-                                      CLARA
-                                  </div>
-                              </div>
                           </div>
                   </div>
+                  {% endfor %}
                                       
               <div class="roast-controls roast-controls__container">
                 <button class="lighter-roast" aria-label="previous slide"><i class="fas fas fa-chevron-left fa-sm"></i>
@@ -394,7 +374,7 @@
 
   
           
-  <div class="sb-footer-legal-logo">  <img src="index.html" width="425" height="106" alt="Footer img" typeof="foaf:Image" class="lazyload" data-src="/br/sites/default/files/2019-10/us-footer-logo-updated.jpg" />
+  <div class="sb-footer-legal-logo"> 
 
 </div>
 
