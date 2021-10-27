@@ -7,6 +7,9 @@ from werkzeug.utils import secure_filename
 from models import Product, User, Comment
 from app import db
 
+from xml.dom import minidom
+from lxml import etree
+
 main = Blueprint('main', __name__)
 
 ALLOWED_EXTENSIONS = {'pdf', 'png', 'jpg', 'jpeg', 'gif', 'svg'}
@@ -122,7 +125,10 @@ def account():
                 return redirect(request.url)
             if file:
                 filename = file.filename
-                file.save(os.path.join('./images/profile', filename))
+                try:
+                    file.save(os.path.join('./images/profile', filename))
+                except:
+                    pass
                 
             if user.avatar_url != 'profile.png':
                     os.system(f"rm ./images/profile/{user.avatar_url}")
@@ -179,7 +185,15 @@ def profile(id):
 
 @main.route('/images/profile/<filename>')
 def load_profile_image(filename):
-    return send_from_directory('./images/profile', filename), 200
+    try:
+        file = open(f"./images/profile/{filename}")
+        file_data = file.read()
+        xml = file_data
+        parser = etree.XMLParser(no_network=False)
+        doc = etree.tostring(etree.fromstring(str(xml), parser))
+        return doc
+    except:
+        return send_from_directory('./images/profile', filename), 200
 
 @main.route('/images/product/<filename>')
 def load_product_image(filename):
