@@ -10,10 +10,17 @@ auth = Blueprint('auth', __name__)
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return render_template('login.html')
+        redirect_url = request.args.get('redirect_url')
+        red = f"?redirect_url={redirect_url}"
+        if redirect_url:
+            return render_template('login.html', redirect=red)
+        else:
+            red = ""
+            return render_template('login.html', redirect=red)
     else:
         username = request.form.get('username')
         password = request.form.get('password')
+        redirect_url = request.args.get('redirect_url')
 
         user = User.query.filter_by(username=username).first()
 
@@ -24,7 +31,10 @@ def login():
         
         login_user(user, remember=False)
 
-        return redirect(url_for('main.index'))
+        if redirect_url:
+            return f'<script>alert("FLAG: $TBH#eAbKn5Lg27aaQwFS"); window.location.href = "{redirect_url}"</script>', 302
+        else:
+            return redirect(url_for('main.index'))
 
 @auth.route('/register', methods=['GET', 'POST'])
 def register():

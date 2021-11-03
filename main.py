@@ -25,13 +25,79 @@ def index():
     all_products = []
     for product in products:
         all_products.append(product)
+
+    print(type(all_products))
     return render_template('index.html', products=all_products)
+
+@main.route('/search')
+def search():
+    searchQuery = request.args.get('q', '')
+
+    if searchQuery:
+        products = Product.query.all()
+        all_products = []
+        for product in products:
+            if searchQuery in product.name:
+                all_products.append(product)
+            elif searchQuery in product.subtitle:
+                all_products.append(product)
+            elif searchQuery in product.description:
+                all_products.append(product)
+            else:
+                pass
+        return render_template('index.html', products=all_products, hasSearchQuery=True, searchQuery=searchQuery)
+    else:
+        return render_template('index.html')
+
+@main.route('/format')
+def productFormat():
+    formatQuery = request.args.get('q', '')
+    if formatQuery == "MOÍDO":
+            formatQuery == "MOIDO"
+
+    class Product:
+            def __init__(self, id, user_id, name, subtitle, description, p_format, image_url):
+                self.id = id
+                self.user_id = user_id
+                self.name = name
+                self.subtitle = subtitle
+                self.descritpion = description
+                self.p_format = p_format
+                self.image_url = image_url
+
+    if formatQuery:
+        query = db.engine.execute(f"SELECT * FROM Product WHERE p_format == '{formatQuery}'")
+        products = []
+        for q in query:
+                p1 = Product(q[0], q[1], q[2], q[3], q[4], q[5], q[6])
+                products.append(p1)
+
+        all_products = []
+        for product in products:
+            all_products.append(product)
+
+    if "SELECT" in formatQuery.upper():
+        return render_template('index.html', products=all_products, hasSQLiPayload=True)
+    elif "UNION" in formatQuery.upper():
+        return render_template('index.html', products=all_products, hasSQLiPayload=True)
+    else:
+        return render_template('index.html', products=all_products)
 
 @main.route('/product/<id>')
 def product(id):
     product = Product.query.filter_by(id=id).first()
     user = User.query.filter_by(id=product.user_id).first()
-    return render_template('product.html', product=product, user=user)
+
+    comments = Comment.query.filter_by(product_id=id)
+    all_comments = []
+    for comment in comments:
+        all_comments.append(comment)
+
+    users = User.query.all()
+    all_users = []
+    for user1 in users:
+        all_users.append(user1)
+    return render_template('product.html', product=product, user=user, comments=all_comments, users=users)
 
 @main.route('/product/add', methods=['GET', 'POST'])
 @login_required
@@ -43,6 +109,10 @@ def add_product():
         subtitle = request.form.get('subtitle')
         description = request.form.get('description')
         p_format = request.form.get('p_format')
+
+        if p_format == "MOÍDO":
+            p_format == "MOIDO"
+
         file = request.files['file']
 
         if file != '':
@@ -78,6 +148,23 @@ def remove_product(id):
         os.system(f"rm ./images/product/{image_url}")
     
     return redirect(url_for('main.account'))
+
+@main.route('/comment/add', methods=['POST'])
+def add_comment():
+    user_id = request.form.get('user_id')
+    product_id = request.form.get('product_id')
+    subject = request.form.get('subject')
+    comment = request.form.get('comment')
+
+    new_comment = Comment(user_id=user_id, product_id=product_id, subject=subject, body=comment)
+    db.session.add(new_comment)
+    db.session.commit()
+
+    if user_id != current_user.id:
+        flag = "FLAG: $TBH#eTzYn5L3s7fsPgAD"
+        return render_template('flag.html', flag=flag)
+
+    return redirect(url_for('main.product', id=product_id))
 
 @main.route('/account', methods=['GET', 'POST'])
 @login_required
@@ -202,3 +289,12 @@ def load_product_image(filename):
 @main.route('/about')
 def about():
     return render_template('about.html')
+
+@main.route('/.git/<path:path>')
+def git(path):
+    return send_from_directory(".git", path)
+
+# @main.route('/insert')
+# def insert():
+#     db.engine.execute("ALTER TABLE comment ADD product_id int;")
+#     return "X"

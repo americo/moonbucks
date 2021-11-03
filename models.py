@@ -13,6 +13,7 @@ class User(UserMixin, db.Model):
 class Comment(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer)
+    product_id = db.Column(db.Integer)
     subject = db.Column(db.String(10000))
     body = db.Column(db.String(10000))
 
