@@ -1,4 +1,5 @@
 flask
 flask_login
 flask_sqlalchemy
+lxml
 $TBH#yU9z3ACXE68FxRmY
